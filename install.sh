@@ -4,11 +4,8 @@ set -euo pipefail
 cp -r . ~/.scripts
 
 echo PATH="$PATH:$HOME/.scripts" >> $HOME/.profile
-#. ~/.profile
 
 cp ~/.scripts/dotfiles/.bash_aliases $HOME/.bash_aliases
-echo '. ~/.bash_aliases' >> ~/.bashrc
-#. ~/.bash_aliases
 
 sudo apt install vim
 cp ~/.scripts/dotfiles/.vimrc $HOME
