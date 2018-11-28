@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-mv . ~/.scripts
-echo PATH="$PATH:$HOME/.scripts" >> ~/.profile
+cp -r . ~/.scripts
 
-cp ~/.scripts/dotfiles/.bash_aliases ~/.bash_aliases
+echo PATH="$PATH:$HOME/.scripts" >> $HOME/.profile
+#. ~/.profile
+
+cp ~/.scripts/dotfiles/.bash_aliases $HOME/.bash_aliases
 echo '. ~/.bash_aliases' >> ~/.bashrc
-. ~/.bash_aliases
+#. ~/.bash_aliases
 
-pin vim
-# echo 'export EDITOR=vim' >> ~/.profile
+sudo apt install vim
+cp ~/.scripts/dotfiles/.vimrc $HOME
+echo 'export EDITOR=vim' >> ~/.profile
 # echo 'export EDITOR=/home/user/.local/bin/nvim' >> ~/.profile
-# cp ~/.config/nvim/init.vim ~/.scripts/dotfiles
+# cp ~/.scripts/dotfiles ~/.config/nvim/init.vim
 
 exit 0
