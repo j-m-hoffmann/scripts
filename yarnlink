@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# link a global dependency
+set -e
+
+if [[ $# -eq 1 ]]; then
+  current=$(pwd)
+  cd "$HOME/.config/yarn/global/node_modules/$1"
+  yarn link
+  cd "$current"
+  yarn link "$1" 
+else
+  echo "Usage: $0 <PACKAGE_TO_ADD>"
+  exit 1
+fi
+
+exit 0

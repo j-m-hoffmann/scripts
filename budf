@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cp ~/.bash_aliases ~/.scripts/dotfiles
+cp ~/.bashrc ~/.scripts/dotfiles
+cp ~/.profile ~/.scripts/dotfiles
+cp ~/.vimrc ~/.scripts/dotfiles
+cp ~/.config/nvim/init.vim ~/.scripts/dotfiles
+cd ~/.scripts
+git add .
+git commit
+git push -u origin master
+cd -
+
+exit 0

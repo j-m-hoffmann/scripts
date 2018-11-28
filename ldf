@@ -1,0 +1,5 @@
+#! /bin/bash
+set -euo pipefail
+
+cp ~/.scripts/dotfiles/.bash_aliases ~/.bash_aliases
+cp ~/.scripts/dotfiles/init.vim ~/.config/nvim/init.vim
